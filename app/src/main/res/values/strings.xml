@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Room Database</string>
+    <string name="activity_main">User Details</string>
+</resources>

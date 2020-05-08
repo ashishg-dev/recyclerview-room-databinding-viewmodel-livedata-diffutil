@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data class="UserDetailsBinding">
+
+        <variable
+            name="userDetailsModel"
+            type="dev.ashish.roomdatabase.entity.UserDetails" />
+
+        <variable
+            name="listener"
+            type="dev.ashish.roomdatabase.adapter.UserDetailsAdapterListener" />
+
+    </data>
+
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="@{() -> listener.onItemEdit(userDetailsModel)}"
+        android:layout_margin="8dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp">
+
+
+            <LinearLayout
+                android:id="@+id/linearLayoutDetails"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="12dp"
+                android:layout_toStartOf="@+id/imageViewDelete"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textViewFullName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:textSize="16dp"
+                    app:setFirstName="@{userDetailsModel.firstName}"
+                    app:setLastName="@{userDetailsModel.lastName}" />
+
+                <TextView
+                    android:id="@+id/textViewEmail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@{userDetailsModel.email}"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/textViewMobileNumber"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp"
+                    android:fontFamily="sans-serif-light"
+                    android:text="@{userDetailsModel.mobileNumber}"
+                    android:textSize="14dp" />
+
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageViewDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:clickable="true"
+                android:focusable="true"
+                android:onClick="@{() -> listener.onItemDelete(userDetailsModel)}"
+                android:padding="8dp"
+                android:src="@drawable/ic_delete_black_24dp" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
