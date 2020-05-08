@@ -77,3 +77,7 @@ public abstract class MyDatabase : RoomDatabase() {
     }
 }
 </pre>
+<h4>Final Result<h4>
+<a href="https://github.com/ashishgupta191193/recyclerview-room-databinding-viewmodel-livedata-diffutil/blob/master/app-debug.apk"> Download the apk file</a>
+<br/><br/>
+<img src="https://github.com/ashishgupta191193/recyclerview-room-databinding-viewmodel-livedata-diffutil/blob/master/output.gif" width="250" height="450" />
