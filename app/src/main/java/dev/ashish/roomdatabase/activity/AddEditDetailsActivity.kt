@@ -30,6 +30,7 @@ class AddEditDetailsActivity : AppCompatActivity() {
             R.layout.activity_add_details
         )
         activityAddDetailsBinding.addDetailsActivity = this
+        activityAddDetailsBinding.lifecycleOwner = this
 
         setActionBarTitle("Add Details")
 
